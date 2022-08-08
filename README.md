@@ -24,4 +24,7 @@ ng serve
 ```
 The first command will install all needed reference files and libraries, the second one will build your app and start it up in Port: 4200 in your computer.
 If everything went well you should be able to navigate to [http://localhost:4200](https://localhost:4200) and see a login screen like the one below.
-![Login Screen](src/assets/Login.png?raw=true, "Login Screen")
+![Login Screen](src/assets/Login.png?raw=true,  "Login Screen")
+
+Here you should be able to Login by typing in your Epicor Username and Password and Clicking the Login Button. Assuming everything is working as intended you should see the Home screen below with a list of your Epicor companies.
+![Home Screen](src/assets/Home.png?raw=true,  "Home Screen")
