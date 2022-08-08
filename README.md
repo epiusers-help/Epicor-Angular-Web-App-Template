@@ -30,4 +30,16 @@ Here you should be able to Login by typing in your Epicor Username and Password 
 ![Home Screen](src/assets/Home.png?raw=true,  "Home Screen")
 
 ## Technical Details
-The app consists of 2 view components ([login](src/app/views/login/) and [home](src/app/views/home/)).
+The app consists of:
+2 view components [login](src/app/views/login/) and [home](src/app/views/home/)
+1 partial component [navigation](src/app/partials/navigation/)
+2 services [EpicorAuthGuardService](src/app/services/epicor-auth-guard.service.ts) and [epicorSvc](src/app/services/epicorsvc.service.ts)
+1 model [EpicorTokenResponse](src/app/models/epicor-token-response.ts)
+
+### Projcect Bootstrapping
+The project is bootstrapped as follows
+1. When the app spins up angular runs main.ts as defined in the angular.json file
+2. main.ts calls the bootstrap function in the [app.module.ts](src/app/app.module.ts) file
+3. in turn the boostrap executes AppComponent.ts which is the root component of the app
+4. [AppComponent.ts](src/app/app.component.ts) is rendered in the index.html file under the injection point  <app-root></app-root>
+5. AppComponent itself has two render points defined in [app.component.html](src/app/app.component.html) <app-navigation> and <router-outlet>
