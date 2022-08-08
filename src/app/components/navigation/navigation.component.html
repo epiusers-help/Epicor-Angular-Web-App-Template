@@ -1,8 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand navbar navbar-dark bg-dark">
+    <a style="margin-left: 10px" class="navbar-brand" href="#">Navbar</a>
+
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item active">
@@ -10,10 +8,10 @@
         </li>
       </ul>
     </div>
-    <div  class="navbar-nav" *ngIf="IsUserLoggedIn()">
+    <div style="margin-right:10px;"  class="navbar-nav" *ngIf="IsUserLoggedIn()">
         <a class="nav-link" (click)="LogoutUser()"  >Logout {{GetUserId()}}</a>
     </div>
-    <div class="navbar-nav" *ngIf="!IsUserLoggedIn()">
+    <div style="margin-right:10px;" class="navbar-nav" *ngIf="!IsUserLoggedIn()">
         <a class="nav-link" [routerLink]="['/Login']">Login</a>
     </div>
   </nav>
