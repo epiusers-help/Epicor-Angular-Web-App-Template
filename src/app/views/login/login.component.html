@@ -1,0 +1,29 @@
+<div class="card" style="width: 50%; margin-left:auto; margin-right:auto; margin-top:50px">
+    <div class="card-body">
+        <form [formGroup]="loginForm">
+            <div class="form-group">
+                <label for="inputUserName">Username</label>
+                <input type="text" class="form-control" #inputUserName id="inputUserName" aria-describedby="usernameHelp"
+                    placeholder="Enter your Epicor UserID" formControlName="userName" autocomplete="username" >
+                <small id="usernameHelp" class="form-text text-muted">Enter your epicor username above (not your email
+                    address)</small>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" autocomplete="current-password" #inputPassword id="inputPassword" placeholder="Password" formControlName="password">
+            </div>
+            <div class="form-group" style="margin-top:10px" *ngIf="!loginForm.valid && loginForm.touched">
+                <ngb-alert [dismissible]="false" type="danger" *ngIf="loginForm.get('userName')!.hasError('required') || loginForm.get('password')!.hasError('required')">
+                    <small *ngIf="loginForm.get('userName')!.hasError('required')">Username is Required!</small>
+                    <small *ngIf="loginForm.get('password')!.hasError('required')"> Password is Required!</small>
+                </ngb-alert>
+            </div>
+            <div class="form-group" style="margin-top:10px" *ngIf="loginErrorMsg!==''">
+                <ngb-alert type="danger" [dismissible]="false">
+                    {{loginErrorMsg}}
+                </ngb-alert>
+            </div>
+            <button type="submit" (click)="Login()" class="btn btn-primary" style="margin-top:10px">Login</button>
+        </form>
+    </div>
+</div>
