@@ -24,4 +24,4 @@ ng serve
 ```
 The first command will install all needed reference files and libraries, the second one will build your app and start it up in Port: 4200 in your computer.
 If everything went well you should be able to navigate to [http://localhost:4200](https://localhost:4200) and see a login screen like the one below.
-[Login Screen](src/assets/Login.png?raw=true, "Login Screen")
+![Login Screen](src/assets/Login.png?raw=true, "Login Screen")
