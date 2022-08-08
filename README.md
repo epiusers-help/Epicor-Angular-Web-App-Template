@@ -28,3 +28,6 @@ If everything went well you should be able to navigate to [http://localhost:4200
 
 Here you should be able to Login by typing in your Epicor Username and Password and Clicking the Login Button. Assuming everything is working as intended you should see the Home screen below with a list of your Epicor companies.
 ![Home Screen](src/assets/Home.png?raw=true,  "Home Screen")
+
+## Technical Details
+The app consists of 2 view components ([login](src/app/views/login/) and [home](src/app/views/home/)).
