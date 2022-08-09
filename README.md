@@ -47,16 +47,17 @@ The app consists of:
 1 model [EpicorTokenResponse](src/app/models/epicor-token-response.ts)
 
 
-### Projcect Bootstrapping (how the sausage is made)
+### Project Bootstrapping (how the sausage is made)
 The project is bootstrapped as follows
 1. When the app spins up angular runs main.ts as defined in the angular.json file
 2. main.ts calls the bootstrap function in the [app.module.ts](src/app/app.module.ts) file
-3. in turn the boostrap executes AppComponent.ts which is the root component of the app
-4. [AppComponent.ts](src/app/app.component.ts) is rendered in the index.html file under the injection point  <app-root></app-root>
+3. In turn the boostrap function executes AppComponent.ts which is the root component of the app
+4. [AppComponent.ts](src/app/app.component.ts) is rendered in the [index.html](src/index.html) file under the injection point  <app-root></app-root>
 5. AppComponent itself has two render points defined in [app.component.html](src/app/app.component.html) <app-navigation> and <router-outlet>
 6. [navigation.component](src/app/components/navigation/) is rendered across the top of all the "pages" and it is just a navigation bar. It contains a shortcut to Home as well as a link to login / logout based on the current authentication state.
 7. app-navigation is where the engular router renders any component or "route" you have navigated to. Angular is what is known as a SPA (or single page aplication) so each view is rendered in the same physical HTML page by manipulating the dom. The routing rules are defined in the [app-routing.module.ts](src/app/app-routing.module.ts) file.
 8. [app-routing.module.ts](src/app/app-routing.module.ts) defines two routes for this app /Login which renders the [login.component](src/app/views/login/) and / which renders the [home.component](src/app/views/home/)
+https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/f5ca78ebea47bb1ae487f48a730eaa50ab52ec83/src/app/app-routing.module.ts#L7
 9. In the routing rule for the [home.component](src/app/components/home/) we define an [AuthGuard](src/app/services/epicor-auth-guard.service.ts) via the canActivate property. This is a guard that checks to see if the user is authenticated. If the user is not authenticated the user is redirected to the [login.component](src/app/views/login/)
 10. [epicor-auth-guard.service.ts](src/app/services/epicor-auth-guard.service.ts) implements the CanActivate interface and returns a boolean value based on whether the user is logged in or not. This is checked by using the [epicorsvc.service.ts](src/app/services/epicorsvc.service.ts) method IsUserLoggedIn() which reads the Epicor bearer token from the browser HTML 5 storage and determines if the user is logged in and wheter or not the token is expired if it doesn't exist or has expired, the user is redirected to the [login.component](src/app/components/login/) to allow them to login.
 11. [login.component.ts](src/app/views/login/) is the login component. It contains a form that allows the user to login and a button to submit the form. It does some basic validation and when the user clicks Login it uses the [epicorsvc.service.ts](src/app/services/epicorsvc.service.ts) method GetEpicorToken() to make a POST request to the TokenResource.svc endpoint in your Epicor Application passing in the username and password in return it gets a Bearer Token which is stored locally and used for all subsequent Epicor calls. A successful login redirects to the / (home) route.
