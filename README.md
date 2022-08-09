@@ -17,7 +17,12 @@ EpicorDefaultCompany:'MfgSys', //This is your default company Identifier
 ```
 
 ### Building App
-Once you have changed the above file you can build the app as follows
+It is required that you hava  functioning angular environment in the very least you should have NPM installed. NPM is a package manager that comes with node
+1. Install node https://nodejs.org/en/download/
+2. Install angular https://angular.io/guide/setup-local
+Once you have both of the above installed you should be able to run the following command to build the application. Remember to change the environment file to match your environment.
+
+
 ```
 npm i
 ng serve
