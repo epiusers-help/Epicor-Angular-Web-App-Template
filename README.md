@@ -14,8 +14,11 @@ This app uses basic authentication to make a POST request to the TokenResource.s
 https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/a4ff8b43fe83fda1c17b2e6d0c3034007273a2d9/src/environments/environment.ts#L5-L11
 
 EpicorHost // This is typically your servername along with our domain
+
 EpicorInstance //This is typically the name of your EpicorInstance such as EpicorLive
+
 EpicorAPIKey // This is generated inside Epicor using API Key Maintenance
+
 EpicorDefaultCompany //This is your default company Identifier
 
 
@@ -64,9 +67,11 @@ https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/f5ca78ebea
 9. In the routing rule for the [home.component](src/app/components/home/) we define an [AuthGuard](src/app/services/epicor-auth-guard.service.ts) via the canActivate property. This is a guard that checks to see if the user is authenticated. If the user is not authenticated the user is redirected to the [login.component](src/app/views/login/)
 https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/a4ff8b43fe83fda1c17b2e6d0c3034007273a2d9/src/app/app-routing.module.ts#L12-L16
 10. [epicor-auth-guard.service.ts](src/app/services/epicor-auth-guard.service.ts) implements the CanActivate interface and returns a boolean value based on whether the user is logged in or not. This is checked by using the [epicorsvc.service.ts](src/app/services/epicorsvc.service.ts) method IsUserLoggedIn() which reads the Epicor bearer token from the browser HTML 5 storage and determines if the user is logged in and wheter or not the token is expired if it doesn't exist or has expired, the user is redirected to the [login.component](src/app/components/login/) to allow them to login.
+https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/cd656824859e5b279a8183317fe88954082ca491/src/app/services/epicor-auth-guard.service.ts#L12-L20
 11. [login.component.ts](src/app/views/login/) is the login component. It contains a form that allows the user to login and a button to submit the form. It does some basic validation and when the user clicks Login it uses the [epicorsvc.service.ts](src/app/services/epicorsvc.service.ts) method GetEpicorToken() to make a POST request to the TokenResource.svc endpoint in your Epicor Application passing in the username and password in return it gets a Bearer Token which is stored locally and used for all subsequent Epicor calls. A successful login redirects to the / (home) route.
+https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/cd656824859e5b279a8183317fe88954082ca491/src/app/views/login/login.component.ts#L33-L55
 12. [home.component.ts](src/app/views/home/) is the main navigational component of the app. If the user is logged in it gets a list of all the companies the current has access to and renders them in a table.
-
+https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/cd656824859e5b279a8183317fe88954082ca491/src/app/views/home/home.component.ts#L20-L44
 
 ### App Walk Through
 ![App Walk Through](src/assets/AppWalkThrough.gif?raw=true,  "App Walk Through")
