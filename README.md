@@ -13,13 +13,15 @@ This app uses basic authentication to make a POST request to the TokenResource.s
 [environment.ts](src/environments/environment.ts): This file contains the settings that are used for the connection information into Epicor. This is the first file you should modify.
 https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/a4ff8b43fe83fda1c17b2e6d0c3034007273a2d9/src/environments/environment.ts#L5-L11
 
-EpicorHost // This is typically your servername along with our domain
+EpicorHost- This is typically your servername along with our domain
 
-EpicorInstance //This is typically the name of your EpicorInstance such as EpicorLive
+EpicorInstance- This is typically the name of your EpicorInstance such as EpicorLive
 
-EpicorAPIKey // This is generated inside Epicor using API Key Maintenance
+EpicorAPIKey- This is generated inside Epicor using API Key Maintenance
+One thing to note is that the API key should be related to an Epicor Scope which limits which parts of Epicor a particular API Key can access. Another thing to keep in mind is that the Epicor Scope is wide access scope unless restricted meaning if you don't add any services to the scope then you will have access to all the services. I typically make sure to add at least 1 BAQ, 1 Service (TipSvc) to ensure your scope is property protecting. 
 
-EpicorDefaultCompany //This is your default company Identifier
+EpicorDefaultCompany- This is your default company Identifier
+
 
 
 ### Building App
