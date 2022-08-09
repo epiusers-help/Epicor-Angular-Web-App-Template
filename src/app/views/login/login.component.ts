@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   async Login()
   {
     this.loginErrorMsg='';
-    this.loginForm.markAllAsTouched()
+    this.loginForm.markAllAsTouched() //Runs client side validation on the form.
     if(this.loginForm.valid)
     {
       this.epicorSvc.GetEpicorToken(this.loginForm.get('userName')?.value, this.loginForm.get('password')?.value).then(response=>{
