@@ -1,5 +1,5 @@
-<table class="table table-striped">
-    <thead>
+<table class="table table-striped" *ngIf="errorMsg==undefined">
+  <thead>
     <tr>
       <th scope="col">Company</th>
       <th scope="col">Name</th>
@@ -7,17 +7,18 @@
       <th scope="col">State</th>
       <th scope="col">Country</th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
     <tr *ngFor="let company of companyResponse?.value; index as i">
-      
+
       <td>
-        {{  company.Company1 }}
+        {{ company.Company1 }}
       </td>
-      <td>{{  company.Name }}</td>
-      <td>{{  company.City }}</td>
-      <td>{{  company.State }}</td>
-      <td>{{  company.Country }}</td>
+      <td>{{ company.Name }}</td>
+      <td>{{ company.City }}</td>
+      <td>{{ company.State }}</td>
+      <td>{{ company.Country }}</td>
     </tr>
-    </tbody>
-  </table>
+  </tbody>
+</table>
+<ngb-alert type="danger" *ngIf="errorMsg!=undefined">{{ errorMsg }}</ngb-alert>

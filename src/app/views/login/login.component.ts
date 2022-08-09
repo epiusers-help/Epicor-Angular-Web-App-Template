@@ -11,6 +11,7 @@ import { EpicorTokenResponse } from '../../models/epicor-token-response';
 })
 export class LoginComponent implements OnInit {
 
+  // Its a form group which does client side validation for the form. In this case both fields are required.
   loginForm: FormGroup = new FormGroup({
     userName: new FormControl('',[
       Validators.required
@@ -21,11 +22,14 @@ export class LoginComponent implements OnInit {
 
   });
   loginErrorMsg='';
+
+  // Bring in our Epicor Service and Router via dependency injection
   constructor(private epicorSvc:EpicorsvcService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  // Calls the GetEpicorToke method in EpicorService if the Form is Valid.
   async Login()
   {
     this.loginErrorMsg='';

@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component:HomeComponent,
-    canActivate:[EpicorAuthGuardService]
+    canActivate:[EpicorAuthGuardService] //Checks to see whether the user has a valid Epicor token in its current local storage.
   }
 ];
 

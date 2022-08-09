@@ -14,15 +14,25 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  IsUserLoggedIn()
+  /// <summary>
+  /// Checks the status of the current user by calling the Epicor Service which in turn looks at the local storage for the token and validates it.
+  /// </summary>
+  IsUserLoggedIn(): boolean
   {
     return this.epicorSvc.IsUserLoggedIn();
   }
 
+  /// <summary>
+  /// Gets the UserID from the token in local storage by parsing the JWT token.
+  /// </summary>
   GetUserId()
   {
     return this.epicorSvc.GetUserId();
   }
+
+  /// <summary>
+  /// Removes the token from local storage and redirects the user to the login page.
+  /// </summary>
   LogoutUser()
   {
     this.epicorSvc.LogoutUser();
