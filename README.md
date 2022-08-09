@@ -8,7 +8,7 @@ This is not meant to be an all encompassing secure solution that will fit every 
 This app uses basic authentication to make a POST request to the TokenResource.svc endpoint in your Epicor Application and in return it gets a Bearer Token which is stored locally and used for all subsequent Epicor calls. At no point does this application store the plain text username and password.
 
 ### Important Files
-[environment.ts](src/environments.environment.ts): This file contains the settings that are used for the connection information into Epicor. This is the first file you should modify.
+[environment.ts](src/environments/environment.ts): This file contains the settings that are used for the connection information into Epicor. This is the first file you should modify.
 ```
 EpicorHost:'yourserver.tld.com', // This is typically your servername along with our domain
 EpicorInstance:'YourEpicorInstance', //This is typically the name of your EpicorInstance such as EpicorLive
