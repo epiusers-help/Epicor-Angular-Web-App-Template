@@ -4,6 +4,8 @@ This is a very basic angular App that takes advantage of the Epicor Rest API and
 
 This is not meant to be an all encompassing secure solution that will fit every scenario but it is mean to be used as a guide and a learning tool on how you can safely use Angular and Epicor to create a front end application that relies exclusively on the Epicor back end
 
+I used bootstrap for the visual components I will not be explaining Bootstrap there are no less than a thousand bootstrap tutorials out there.
+
 ### Authentication Mechanism
 This app uses basic authentication to make a POST request to the TokenResource.svc endpoint in your Epicor Application and in return it gets a Bearer Token which is stored locally and used for all subsequent Epicor calls. At no point does this application store the plain text username and password.
 
