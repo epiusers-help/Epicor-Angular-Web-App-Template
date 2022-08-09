@@ -56,9 +56,9 @@ The project is bootstrapped as follows
 1. When the app spins up angular runs main.ts as defined in the angular.json file
 2. main.ts calls the bootstrap function in the [app.module.ts](src/app/app.module.ts) file
 3. In turn the boostrap function executes AppComponent.ts which is the root component of the app
-4. [AppComponent.ts](src/app/app.component.ts) is rendered in the [index.html](src/index.html) file under the injection point  <app-root></app-root>
+4. [AppComponent.ts](src/app/app.component.ts) is rendered in the [index.html](src/index.html) file under the injection point  ```<app-root></app-root>```
 https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/a4ff8b43fe83fda1c17b2e6d0c3034007273a2d9/src/index.html#L10-L12
-5. AppComponent itself has two render points defined in [app.component.html](src/app/app.component.html) <app-navigation> and <router-outlet>
+5. AppComponent itself has two render points defined in [app.component.html](src/app/app.component.html) ```<app-navigation>``` and ```<router-outlet>```
 https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/a4ff8b43fe83fda1c17b2e6d0c3034007273a2d9/src/app/app.component.html#L1-L2
 6. [navigation.component](src/app/components/navigation/) is rendered across the top of all the "pages" and it is just a navigation bar. It contains a shortcut to Home as well as a link to login / logout based on the current authentication state.
 7. app-navigation is where the engular router renders any component or "route" you have navigated to. Angular is what is known as a SPA (or single page aplication) so each view is rendered in the same physical HTML page by manipulating the dom. The routing rules are defined in the [app-routing.module.ts](src/app/app-routing.module.ts) file.
