@@ -53,6 +53,6 @@ The project is bootstrapped as follows
 
 
 ### App Walk Through
-![App Walk Through](src/assets/AppWalkThrough.png?raw=true,  "App Walk Through")
+![App Walk Through](src/assets/AppWalkThrough.gif?raw=true,  "App Walk Through")
 
 I have commented as much of the code as I can to make it easier to understand. Let me know if you run into any issues.
