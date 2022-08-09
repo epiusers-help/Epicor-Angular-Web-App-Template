@@ -56,7 +56,9 @@ The app consists of:
 ### Project Bootstrapping (how the sausage is made)
 The project is bootstrapped as follows
 1. When the app spins up angular runs main.ts as defined in the angular.json file
+https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/6da5704d19868b4400fa5233e5824df3f38cc8ad/angular.json#L22
 2. main.ts calls the bootstrap function in the [app.module.ts](src/app/app.module.ts) file
+https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/6da5704d19868b4400fa5233e5824df3f38cc8ad/src/main.ts#L11-L12
 3. In turn the boostrap function executes AppComponent.ts which is the root component of the app
 4. [AppComponent.ts](src/app/app.component.ts) is rendered in the [index.html](src/index.html) file under the injection point  ```<app-root></app-root>```
 https://github.com/epiusers-help/Epicor-Angular-Web-App-Template/blob/a4ff8b43fe83fda1c17b2e6d0c3034007273a2d9/src/index.html#L10-L12
